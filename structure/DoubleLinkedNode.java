@@ -1,38 +1,38 @@
 package structure;
 
-public class DoubleLinkedNode<X> {
+public class DoubleLinkedNode<L> {
 
-    private X element;
-    private DoubleLinkedNode<X> prev;
-    private DoubleLinkedNode<X> next;
+    private L element;
+    private DoubleLinkedNode<L> prev;
+    private DoubleLinkedNode<L> next;
 
     //se crean los getters and setters
-    public X getElement() {
+    public L getElement() {
         return element;
     }
 
-    public void setElement(X element) {
+    public void setElement(L element) {
         this.element = element;
     }
 
-    public DoubleLinkedNode<X> getPrev() {
+    public DoubleLinkedNode<L> getPrev() {
         return prev;
     }
 
-    public void setPrev(DoubleLinkedNode<X> prev) {
+    public void setPrev(DoubleLinkedNode<L> prev) {
         this.prev = prev;
     }
 
-    public DoubleLinkedNode<X> getNext() {
+    public DoubleLinkedNode<L> getNext() {
         return next;
     }
 
-    public void setNext(DoubleLinkedNode<X> next) {
+    public void setNext(DoubleLinkedNode<L> next) {
         this.next = next;
     }
 
 //se crea el constructor
-    public DoubleLinkedNode(X element) {
+    public DoubleLinkedNode(L element) {
         this.element = element;
     }
 
