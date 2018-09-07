@@ -85,14 +85,14 @@ public class LinkedList<L> {
 
     //elimina los un nodo en cualquier parte de la lista 
     private void DeleteWherever(L element) {
-        LinkedListNode<L> tempNode, tempPrev, tempNext;
+        LinkedListNode<L> tempNode, tempPrevious, tempNext;
         tempNode = head;
         for (int i = 0; i < size; i++) {
             if (tempNode.getNextNode().getElement().equals(element)) {
-                tempPrev = tempNode;
+                tempPrevious = tempNode;
                 tempNode = tempNode.getNextNode();
                 tempNext = tempNode.getNextNode();
-                tempPrev.setNextNode(tempNext);
+                tempPrevious.setNextNode(tempNext);
                 tempNode.setNextNode(null);
             } else {
                 tempNode = tempNode.getNextNode();
