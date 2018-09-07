@@ -1,4 +1,4 @@
 package structure;
-public class Cola {
+public class Cola<L> {
     
 }
