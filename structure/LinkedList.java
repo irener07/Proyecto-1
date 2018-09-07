@@ -65,16 +65,16 @@ public class LinkedList<L> {
 
     //actualiza los elementos de los nodos
     public void update(L initialElem, L replacedElem) {
-        LinkedListNode<L> temp, tempPrev, tempNext, tempNew;
+        LinkedListNode<L> temp, tempPrevious, tempNext, tempNew;
         temp = head;
 
         for (int i = 0; i < size; i++) {
             if (temp.getNextNode().equals(initialElem)) {
-                tempPrev = temp;
+                tempPrevious = temp;
                 temp = temp.getNextNode();
                 tempNext = temp.getNextNode();
                 tempNew = new LinkedListNode<>(replacedElem);
-                tempPrev.setNextNode(tempNew);
+                tempPrevious.setNextNode(tempNew);
                 tempNew.setNextNode(tempNext);
                 temp.setElement(null);
             } else {
