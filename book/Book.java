@@ -7,6 +7,4 @@ public class Book {
     private String nombre, tema, descripcion;
     private image 
     
-
-    
 }
