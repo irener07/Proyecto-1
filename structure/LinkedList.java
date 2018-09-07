@@ -134,12 +134,12 @@ public class LinkedList<L> {
     //permite conocer los elementos del nodo desde el primero hasta el ultimo
     @Override
     public String toString() {
-        String msg = "";
+        String message = "";
         LinkedListNode<L> temp = head;
         for (int i = 0; i < size; i++) {
-            msg += temp.toString();
+            message += temp.toString();
             temp = temp.getNextNode();
         }
-        return msg;
+        return message;
     }
 }
