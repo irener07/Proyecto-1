@@ -83,45 +83,7 @@ public class LinkedList<L> {
         }
     }
 
-    //permite eliminar el primer nodo de la lista
-    private void DeleteFrist() {
-        LinkedListNode<L> temp = head;
-        head = head.getNextNode();
-        temp.setNextNode(null);
-        size--;
-    }
 
-    //permite eliminar el ultimo nodo de la lista 
-    private void DeleteFinal() {
-        LinkedListNode<L> temp = head;
-        for (int i = 0; i < size; i++) {
-            if (temp.getNextNode() == tail) {
-                tail = temp;
-                tail.setNextNode(null);
-            } else {
-                temp.getNextNode();
-            }
-        }
-        size--;
-    }
-
-    //elimina un solo nodo
-    private void DeleteOnly1(L element) {
-        head = null;
-        tail = head;
-        size--;
-    }
-
-    //permite elimar un elemnto de una lista de size 2
-    private void DeleteOnly2(L element) {
-        if (head.getElement().equals(element)) {
-            DeleteFrist();
-        } else if (tail.getElement().equals(element)) {
-            DeleteFinal();
-        }
-    }
-    
-    //permite eliminar los elementos en cualquier parte de la lista
     private void DeleteWherever(L element) {
         LinkedListNode<L> tempNode, tempPrev, tempNext;
         tempNode = head;
@@ -138,23 +100,35 @@ public class LinkedList<L> {
         }
         size--;
     }
-   
-    //elimina cualquier nodo,dependiendo del size
+
     public void Delete(L element) {
         if (!isEmpty()) {
             if (tail.getElement().equals(element)) {
-                DeleteFinal();
+                LinkedListNode<L> temp = head;
+                for (int i = 0; i < size; i++) {
+                    if (temp.getNextNode() == tail) {
+                        tail = temp;
+                        tail.setNextNode(null);
+                    } else {
+                        temp.getNextNode();
+                    }
+                }
+                size--;
             } else if (head.getElement().equals(element)) {
-                DeleteFrist();
+                LinkedListNode<L> temp = head;
+                head = head.getNextNode();
+                temp.setNextNode(null);
+                size--;
             } else if (size == 1) {
-                DeleteOnly1(element);
-            } else if (size == 2) {
-                DeleteOnly2(element);
-            } else if (size >= 3) {
+                head = null;
+                tail = head;
+                size--;
+            } else if (size >= 2) {
                 DeleteWherever(element);
             }
         }
     }
+
 
     //permite conocer los elementos del nodo desde el primero hasta el ultimo
     @Override
