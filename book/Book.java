@@ -67,7 +67,7 @@ public class Book {
 				@Override
     public String toString(){
         return "Book{"+ "ID:"+ID+ ", CantidadVendida:" +CantidadVendida+ ", CantidadDisponible:" +CantidadDisponible+ ", Precio:" +precio + ", Nombre:" 
-                + nombre + ", Tema:" + tema + ", Decripcion:" + descripcion +"}";
+                + nombre + ", Tema:" + tema + ", Decripcion:" + descripcion + ",Inventory:" + Inventory + '}';
         
                 
     }
