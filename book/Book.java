@@ -1,6 +1,6 @@
-package logic.business.book;
+package business.book;
 
-import logic.structure.DoubleLinkedList;
+import structure.DoubleLinkedList;
 
 
 public class Book {
