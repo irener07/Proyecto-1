@@ -1,7 +1,5 @@
 package structure;
 
-import structure.LinkedListNode;
-
 public class Cola<L> {
 
     //nodos de la la lista cola
@@ -39,7 +37,7 @@ public class Cola<L> {
     }
 
     // inserta datos al final de la lista
-    public void insert(L element) {
+    public void enqueue(L element) {
         if (isEmpty()) {
             head = new LinkedListNode<>(element);
             tail = head;
@@ -50,8 +48,7 @@ public class Cola<L> {
             size++;
         }
     }
-    
-    //permite consultar el valor de los nodos
+
     public L consult(L element) {
         LinkedListNode<L> temp = head;
         for (int i = 0; i < size; i++) {
@@ -85,7 +82,7 @@ public class Cola<L> {
     }
 
     //elimina el primero de la lista
-    public void delete(L element) {
+    public void dequeue(L element) {
         LinkedListNode<L> temp = head;
         head = head.getNextNode();
         temp.setNextNode(null);
