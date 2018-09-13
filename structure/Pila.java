@@ -1,7 +1,5 @@
 package structure;
 
-import structure.LinkedListNode;
-
 public class Pila<L> {
 
     //se crea los nodos principles de la pila
@@ -39,7 +37,7 @@ public class Pila<L> {
     }
 
     //inserta al inicio de la pila
-    public void insert(L element) {
+    public void push(L element) {
         LinkedListNode<L> newNode = new LinkedListNode<>(element);
         if (isEmpty()) {
             head = new LinkedListNode<>(element);
@@ -86,7 +84,7 @@ public class Pila<L> {
     }
 
     //permite eliminar el ultimo nodo añadido
-    public void delete(L element) {
+    public void pop(L element) {
         LinkedListNode<L> temp = head;
         for (int i = 0; i < size; i++) {
             if (temp.getNextNode() == tail) {
@@ -99,6 +97,7 @@ public class Pila<L> {
         size--;
     }
 
+    @Override
     public String toString() {
         String message = "";
         LinkedListNode<L> temp = head;
